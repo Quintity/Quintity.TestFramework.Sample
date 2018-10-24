@@ -15,6 +15,7 @@ namespace Quintity.TestFramework.Sample.Installer
                 new Dir($@"C:\Quintity.TestFramework.Sample")
                 );
 
+            project.OutDir = $@".\bin\Debug";
             project.BuildMsi();
         }
     }

@@ -6,21 +6,21 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="a55811da-dcc5-4e2d-8b7a-aea72aaf71f8" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="a55811da-dcc5-4e2d-8b7a-aea71aaf71f7" Manufacturer="jmoth">
+  <Product Id="48816cfb-4fb2-427b-ae8f-67a163a1cf0b" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="48816cfb-4fb2-427b-ae8f-67a153a1cf0a" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="INSTALLDIR" Name="ABSOLUTEPATH">
 
-        <Component Id="Component.INSTALLDIR.EmptyDirectory" Guid="a55811da-dcc5-4e2d-8b7a-aea73cf260d9" KeyPath="yes">
+        <Component Id="Component.INSTALLDIR.EmptyDirectory" Guid="48816cfb-4fb2-427b-ae8f-67a175e4beec" KeyPath="yes">
           <CreateFolder />
           <RemoveFolder Id="INSTALLDIR" On="uninstall" />
         </Component>
 
       </Directory>
 
-      <Component Id="TARGETDIR" Guid="a55811da-dcc5-4e2d-8b7a-aea78d7fe16a" KeyPath="yes">
+      <Component Id="TARGETDIR" Guid="48816cfb-4fb2-427b-ae8f-67a1c6713f7d" KeyPath="yes">
         <CreateFolder />
         <RemoveFolder Id="TARGETDIR" On="uninstall" />
       </Component>
