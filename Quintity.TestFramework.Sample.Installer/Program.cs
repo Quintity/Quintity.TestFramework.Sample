@@ -14,6 +14,8 @@ namespace Quintity.TestFramework.Sample.Installer
             var project = new Project("Quintity.Sample.Tests",
                 new Dir($@"C:\Quintity.TestFramework.Sample")
                 );
+
+            project.BuildMsi();
         }
     }
 }
