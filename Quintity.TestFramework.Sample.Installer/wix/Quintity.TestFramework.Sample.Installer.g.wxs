@@ -6,28 +6,31 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="48816cfb-4fb2-427b-ae8f-67a163a1cf0b" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="48816cfb-4fb2-427b-ae8f-67a153a1cf0a" Manufacturer="jmoth">
+  <Product Id="180e5164-d3a2-4b9d-838d-a52bc7fd84f6" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="180e5164-d3a2-4b9d-838d-a52bb7fd84f5" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="INSTALLDIR" Name="ABSOLUTEPATH">
+      <Directory Id="TARGETDIR1" Name="ABSOLUTEPATH">
+        <Directory Id="INSTALLDIR" Name="TestAssemblies">
 
-        <Component Id="Component.INSTALLDIR.EmptyDirectory" Guid="48816cfb-4fb2-427b-ae8f-67a175e4beec" KeyPath="yes">
-          <CreateFolder />
-          <RemoveFolder Id="INSTALLDIR" On="uninstall" />
-        </Component>
+          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="180e5164-d3a2-4b9d-838d-a52b833edadd">
+            <File Id="Newtonsoft.Json.dll_2115730880" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
+          </Component>
 
+          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="180e5164-d3a2-4b9d-838d-a52b949b42bc">
+            <File Id="Quintity.TestFramework.TestLibrary.dll_842990001" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
+          </Component>
+
+          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="180e5164-d3a2-4b9d-838d-a52bfdf13b5b">
+            <File Id="WinSCPnet.dll_1644490608" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
+          </Component>
+
+        </Directory>
       </Directory>
-
-      <Component Id="TARGETDIR" Guid="48816cfb-4fb2-427b-ae8f-67a1c6713f7d" KeyPath="yes">
-        <CreateFolder />
-        <RemoveFolder Id="TARGETDIR" On="uninstall" />
-      </Component>
-
     </Directory>
 
-    <CustomAction Id="Set_DirAbsolutePath" Property="INSTALLDIR" Value="C:\Quintity.TestFramework.Sample" />
+    <CustomAction Id="Set_DirAbsolutePath" Property="TARGETDIR1" Value="C:\Quintity.TestFramework.Sample" />
 
     <UIRef Id="WixUI_Minimal" />
     <UIRef Id="WixUI_ErrorProgressText" />
@@ -35,16 +38,17 @@
     <Property Id="INSTALLDIR_ABSOLUTEPATH" Value="C:\Quintity.TestFramework.Sample" />
 
     <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
-      <ComponentRef Id="Component.INSTALLDIR.EmptyDirectory" />
-      <ComponentRef Id="TARGETDIR" />
+      <ComponentRef Id="Component.Newtonsoft.Json.dll_2115730880" />
+      <ComponentRef Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" />
+      <ComponentRef Id="Component.WinSCPnet.dll_1644490608" />
     </Feature>
 
     <InstallExecuteSequence>
-      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel &lt; 5) AND (INSTALLDIR = ABSOLUTEPATH)</Custom>
+      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel &lt; 5) AND (TARGETDIR1 = ABSOLUTEPATH)</Custom>
     </InstallExecuteSequence>
 
     <InstallUISequence>
-      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel = 5) AND (INSTALLDIR = ABSOLUTEPATH)</Custom>
+      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel = 5) AND (TARGETDIR1 = ABSOLUTEPATH)</Custom>
     </InstallUISequence>
 
   </Product>

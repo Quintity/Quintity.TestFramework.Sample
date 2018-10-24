@@ -12,7 +12,9 @@ namespace Quintity.TestFramework.Sample.Installer
         static void Main(string[] args)
         {
             var project = new Project("Quintity.Sample.Tests",
-                new Dir($@"C:\Quintity.TestFramework.Sample")
+                new Dir($@"C:\Quintity.TestFramework.Sample",
+                    new Dir("TestAssemblies",
+                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\bin\Debug\*.dll")))
                 );
 
             project.OutDir = $@".\bin\Debug";
