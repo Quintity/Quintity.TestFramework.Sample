@@ -18,6 +18,7 @@ namespace Quintity.TestFramework.Sample.Installer
                 );
 
             project.OutDir = $@".\bin\Debug";
+            project.UI = WUI.WixUI_Minimal;
             project.BuildMsi();
         }
     }

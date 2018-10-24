@@ -6,7 +6,7 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="180e5164-d3a2-4b9d-838d-a52bc7fd84f6" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="180e5164-d3a2-4b9d-838d-a52bb7fd84f5" Manufacturer="jmoth">
+  <Product Id="9b646bf5-5603-41ce-9938-f7886ec1f3bf" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="9b646bf5-5603-41ce-9938-f7885ec1f3be" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
@@ -14,15 +14,15 @@
       <Directory Id="TARGETDIR1" Name="ABSOLUTEPATH">
         <Directory Id="INSTALLDIR" Name="TestAssemblies">
 
-          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="180e5164-d3a2-4b9d-838d-a52b833edadd">
+          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="9b646bf5-5603-41ce-9938-f7882a0249a6">
             <File Id="Newtonsoft.Json.dll_2115730880" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="180e5164-d3a2-4b9d-838d-a52b949b42bc">
+          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="9b646bf5-5603-41ce-9938-f7883b5fb185">
             <File Id="Quintity.TestFramework.TestLibrary.dll_842990001" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
           </Component>
 
-          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="180e5164-d3a2-4b9d-838d-a52bfdf13b5b">
+          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="9b646bf5-5603-41ce-9938-f788a4b5aa24">
             <File Id="WinSCPnet.dll_1644490608" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
           </Component>
 
