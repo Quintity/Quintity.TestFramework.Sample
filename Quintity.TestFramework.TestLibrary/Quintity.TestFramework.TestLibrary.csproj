@@ -54,6 +54,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quintity.TestFramework.Utilities\Quintity.TestFramework.Utilities.csproj">
+      <Project>{36361f2b-ac72-4386-92e2-3251f29db882}</Project>
+      <Name>Quintity.TestFramework.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\WinSCP.5.13.4\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.4\build\WinSCP.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
