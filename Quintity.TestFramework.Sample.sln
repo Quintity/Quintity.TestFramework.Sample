@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quintity.TestFramework.TestLibrary", "Quintity.TestFramework.TestLibrary\Quintity.TestFramework.TestLibrary.csproj", "{722B9124-ACDE-4CBD-9DD2-8921399A7959}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{278727C3-99BC-4A0D-A8D3-221B7D6899FD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution.Items", "Solution.Items", "{393D091B-50E6-4AB1-98BB-ACEE769C827D}"
 	ProjectSection(SolutionItems) = preProject
-		Solution Items\nuget.exe = Solution Items\nuget.exe
+		Solution.Items\nuget.exe = Solution.Items\nuget.exe
 	EndProjectSection
 EndProject
 Global
