@@ -1,6 +1,6 @@
 node {
   stage('Checkout Solution') {
-    git branch: 'Jenkins', credentialsId: 'da87013a2259dc8cb9df9217b78fc43276412754', url: 'https://github.com/Quintity/Quintity.TestFramework.Sample'
+    git branch: 'Jenkins', credentialsId: '5a7e7d90dc8ff3bf92879c9d20683dbc5aafd5ac', url: 'https://github.com/Quintity/Quintity.TestFramework.Sample'
   }
 
   stage('Get Nuget Packages')  {
