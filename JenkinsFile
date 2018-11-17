@@ -1,4 +1,12 @@
-node{
-  stage("do nothing"){
+node {
+  stage('Checkout Solution') {
+    git branch: 'Jenkins', credentialsId: 'cb5a0302-555b-4fa0-8ced-f5a41d447776', url: 'https://github.com/Quintity/Quintity.TestFramework.Sample'
   }
-}
+
+  stage('Get Nuget Packages')  {
+    bat 'C:\\Nuget\\nuget.exe restore "C:\\Program Files (x86)\\Jenkins\\workspace\\AutomationPipeline\\Starbucks.B2B\\\\Starbucks.B2B.sln"'
+  }
+  
+  stage('Build Solution'){
+    bat '\"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" \"C:\\Program Files (x86)\\Jenkins\\workspace\\AutomationPipeline\\Starbucks.B2B\\Starbucks.B2B.sln\"'
+    }
