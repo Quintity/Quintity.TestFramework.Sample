@@ -6,7 +6,7 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="29af1894-80ff-489a-9586-f7e04a6aef43" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="29af1894-80ff-489a-9586-f7e03a6aef42" Manufacturer="jmoth">
+  <Product Id="344d855d-bb61-417d-86c9-e28316ded195" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="344d855d-bb61-417d-86c9-e28306ded194" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
@@ -14,27 +14,27 @@
       <Directory Id="TARGETDIR1" Name="ABSOLUTEPATH">
         <Directory Id="INSTALLDIR" Name="TestAssemblies">
 
-          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="29af1894-80ff-489a-9586-f7e006ab452a">
+          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="344d855d-bb61-417d-86c9-e283d21f277c">
             <File Id="Newtonsoft.Json.dll_2115730880" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Core.dll_848743574" Guid="29af1894-80ff-489a-9586-f7e056d6d42e">
+          <Component Id="Component.Quintity.TestFramework.Core.dll_848743574" Guid="344d855d-bb61-417d-86c9-e283224ab680">
             <File Id="Quintity.TestFramework.Core.dll_848743574" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Core.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Runtime.dll_191536626" Guid="29af1894-80ff-489a-9586-f7e0cd3c6d02">
+          <Component Id="Component.Quintity.TestFramework.Runtime.dll_191536626" Guid="344d855d-bb61-417d-86c9-e28399b04f54">
             <File Id="Quintity.TestFramework.Runtime.dll_191536626" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Runtime.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="29af1894-80ff-489a-9586-f7e01708ad09">
+          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="344d855d-bb61-417d-86c9-e283e37c8f5b">
             <File Id="Quintity.TestFramework.TestLibrary.dll_842990001" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Utilities.dll_1672328475" Guid="29af1894-80ff-489a-9586-f7e0fe9fc352">
+          <Component Id="Component.Quintity.TestFramework.Utilities.dll_1672328475" Guid="344d855d-bb61-417d-86c9-e283ca13a5a4">
             <File Id="Quintity.TestFramework.Utilities.dll_1672328475" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Utilities.dll" />
           </Component>
 
-          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="29af1894-80ff-489a-9586-f7e0805ea6a8">
+          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="344d855d-bb61-417d-86c9-e2834cd288fa">
             <File Id="WinSCPnet.dll_1644490608" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
           </Component>
 

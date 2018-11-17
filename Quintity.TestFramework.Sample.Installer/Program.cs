@@ -12,13 +12,18 @@ namespace Quintity.TestFramework.Sample.Installer
         static void Main(string[] args)
         {
             var project = new Project("Quintity.Sample.Tests",
-                new Dir($@"C:\Quintity.TestFramework.Sample",
+                new Dir($@"C:\Quintity TestEngineer 3.5",
                     new Dir("TestAssemblies",
-                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\bin\Debug\*.dll")))
+                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\bin\Debug\*.dll"))),
+
+                new ExeFileShortcut("Uninstall.AutomationSample", "[System64Folder]msiexec.exe", "/x [ProductCode] /q")
                 );
+
+
 
             project.OutDir = $@".\bin\Debug";
             project.UI = WUI.WixUI_ProgressOnly;
+            project.GUID = new Guid("7D54CC81-9CC6-4F95-98FC-7D2DC92C7105");
             project.BuildMsi();
         }
     }
