@@ -22,7 +22,7 @@ namespace Quintity.TestFramework.Sample.Installer
             ));
 
             // Place output *.msi to appropriate bin folder.
-            project.OutDir = $@".\bin\Debug\";
+            //project.OutDir = $@".\bin\Debug\";
 
             // Suppress duplicate file warning
             project.LightOptions += "-sice:ICE30";
