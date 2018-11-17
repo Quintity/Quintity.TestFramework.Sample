@@ -6,61 +6,78 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="344d855d-bb61-417d-86c9-e28316ded195" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="344d855d-bb61-417d-86c9-e28306ded194" Manufacturer="jmoth">
+  <Product Id="7d54cc81-9cc6-4f95-98fc-7d2dd92c7106" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="7d54cc81-9cc6-4f95-98fc-7d2dc92c7105" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="TARGETDIR1" Name="ABSOLUTEPATH">
-        <Directory Id="INSTALLDIR" Name="TestAssemblies">
+      <Directory Id="INSTALLDIR" Name="ABSOLUTEPATH">
 
-          <Component Id="Component.Newtonsoft.Json.dll_2115730880" Guid="344d855d-bb61-417d-86c9-e283d21f277c">
-            <File Id="Newtonsoft.Json.dll_2115730880" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
+        <Component Id="Component.Uninstall.SampleAutomation" Guid="7d54cc81-9cc6-4f95-98fc-7d2de78bd38f">
+          <Shortcut Id="INSTALLDIR.Uninstall.SampleAutomation" WorkingDirectory="System64Folder" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode] /q" Name="Uninstall.SampleAutomation.lnk" />
+          <RemoveFolder Id="INSTALLDIR" On="uninstall" />
+
+          <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
+            <RegistryValue Value="0" Type="string" KeyPath="yes" />
+          </RegistryKey>
+        </Component>
+
+        <Directory Id="INSTALLDIR.TestAssemblies" Name="TestAssemblies">
+
+          <Component Id="Component.Newtonsoft.Json.dll_1570579788" Guid="7d54cc81-9cc6-4f95-98fc-7d2d8f78d3d5">
+            <File Id="Newtonsoft.Json.dll_1570579788" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Core.dll_848743574" Guid="344d855d-bb61-417d-86c9-e283224ab680">
-            <File Id="Quintity.TestFramework.Core.dll_848743574" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Core.dll" />
+          <Component Id="Component.Quintity.TestFramework.Core.dll_215753351" Guid="7d54cc81-9cc6-4f95-98fc-7d2d4650d6ce">
+            <File Id="Quintity.TestFramework.Core.dll_215753351" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Core.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Runtime.dll_191536626" Guid="344d855d-bb61-417d-86c9-e28399b04f54">
-            <File Id="Quintity.TestFramework.Runtime.dll_191536626" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Runtime.dll" />
+          <Component Id="Component.Quintity.TestFramework.Runtime.dll_647951915" Guid="7d54cc81-9cc6-4f95-98fc-7d2d0488e0ec">
+            <File Id="Quintity.TestFramework.Runtime.dll_647951915" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Runtime.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" Guid="344d855d-bb61-417d-86c9-e283e37c8f5b">
-            <File Id="Quintity.TestFramework.TestLibrary.dll_842990001" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
+          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_348090868" Guid="7d54cc81-9cc6-4f95-98fc-7d2d50042e82">
+            <File Id="Quintity.TestFramework.TestLibrary.dll_348090868" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Utilities.dll_1672328475" Guid="344d855d-bb61-417d-86c9-e283ca13a5a4">
-            <File Id="Quintity.TestFramework.Utilities.dll_1672328475" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Utilities.dll" />
+          <Component Id="Component.Quintity.TestFramework.Utilities.dll_985494753" Guid="7d54cc81-9cc6-4f95-98fc-7d2de172176a">
+            <File Id="Quintity.TestFramework.Utilities.dll_985494753" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Utilities.dll" />
           </Component>
 
-          <Component Id="Component.WinSCPnet.dll_1644490608" Guid="344d855d-bb61-417d-86c9-e2834cd288fa">
-            <File Id="WinSCPnet.dll_1644490608" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
+          <Component Id="Component.WinSCPnet.dll_1751383497" Guid="7d54cc81-9cc6-4f95-98fc-7d2d099c7d8d">
+            <File Id="WinSCPnet.dll_1751383497" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
           </Component>
 
         </Directory>
       </Directory>
+
+      <Component Id="TARGETDIR" Guid="7d54cc81-9cc6-4f95-98fc-7d2d3cfce178" KeyPath="yes">
+        <RemoveFolder Id="TARGETDIR" On="uninstall" />
+      </Component>
+
     </Directory>
 
-    <CustomAction Id="Set_DirAbsolutePath" Property="TARGETDIR1" Value="C:\Quintity.TestFramework.Sample" />
+    <CustomAction Id="Set_DirAbsolutePath" Property="INSTALLDIR" Value="C:\Quintity TestEngineer 3.5" />
 
-    <Property Id="INSTALLDIR_ABSOLUTEPATH" Value="C:\Quintity.TestFramework.Sample" />
+    <Property Id="INSTALLDIR_ABSOLUTEPATH" Value="C:\Quintity TestEngineer 3.5" />
 
     <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
-      <ComponentRef Id="Component.Newtonsoft.Json.dll_2115730880" />
-      <ComponentRef Id="Component.Quintity.TestFramework.Core.dll_848743574" />
-      <ComponentRef Id="Component.Quintity.TestFramework.Runtime.dll_191536626" />
-      <ComponentRef Id="Component.Quintity.TestFramework.TestLibrary.dll_842990001" />
-      <ComponentRef Id="Component.Quintity.TestFramework.Utilities.dll_1672328475" />
-      <ComponentRef Id="Component.WinSCPnet.dll_1644490608" />
+      <ComponentRef Id="Component.Uninstall.SampleAutomation" />
+      <ComponentRef Id="Component.Newtonsoft.Json.dll_1570579788" />
+      <ComponentRef Id="Component.Quintity.TestFramework.Core.dll_215753351" />
+      <ComponentRef Id="Component.Quintity.TestFramework.Runtime.dll_647951915" />
+      <ComponentRef Id="Component.Quintity.TestFramework.TestLibrary.dll_348090868" />
+      <ComponentRef Id="Component.Quintity.TestFramework.Utilities.dll_985494753" />
+      <ComponentRef Id="Component.WinSCPnet.dll_1751383497" />
+      <ComponentRef Id="TARGETDIR" />
     </Feature>
 
     <InstallExecuteSequence>
-      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel &lt; 5) AND (TARGETDIR1 = ABSOLUTEPATH)</Custom>
+      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel &lt; 5) AND (INSTALLDIR = ABSOLUTEPATH)</Custom>
     </InstallExecuteSequence>
 
     <InstallUISequence>
-      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel = 5) AND (TARGETDIR1 = ABSOLUTEPATH)</Custom>
+      <Custom Action="Set_DirAbsolutePath" Before="AppSearch">(NOT Installed) AND (UILevel = 5) AND (INSTALLDIR = ABSOLUTEPATH)</Custom>
     </InstallUISequence>
 
   </Product>
