@@ -11,5 +11,19 @@ node {
     bat '\"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" \"C:\\Program Files (x86)\\Jenkins\\workspace\\Sample Pipeline\\Quintity.TestFramework.Sample.sln\"'
     }
     
+    stage('Deploy New Build') {
+    /* bat 'msiexec.exe /i "C:\\Program Files (x86)\\Jenkins\\workspace\\AutomationPipeline\\Quintity TestFramework\\Starbucks.B2B\\Starbucks.B2B.Tests.Setup\\bin\\Debug\\Starbucks.B2B.Tests.msi" /QN /L*V "C:\\msilog.log"' */
+    powershell '''
+    
+      $DestinationFile = 'C:\\Quintity TestEngineer 3.5\\Uninstall.Startbucks.Automation.lnk'
+      
+      If (Test-Path $DestinationFile){
+        Echo "Uninstalling old Starbucks Automation build"
+        Start-Process $DestinationFile -Wait -Verb runas
+      }
+        
+    '''
+  }
+    
     
 }
