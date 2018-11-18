@@ -8,7 +8,7 @@ namespace Quintity.TestFramework.TestLibrary
         [TestMethod]
         public TestVerdict SampleTestMethod()
         {
-            return TestVerdict;
+            return TestVerdict.Pass;
         }
     }
 }
