@@ -15,8 +15,6 @@
 
         <Component Id="Component.Uninstall.SampleAutomation" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfe3cf5c8b">
           <Shortcut Id="INSTALLDIR.Uninstall.SampleAutomation" WorkingDirectory="System64Folder" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode] /q" Name="Uninstall.SampleAutomation.lnk" />
-
-          <CreateFolder />
           <RemoveFolder Id="INSTALLDIR" On="uninstall" />
 
           <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
@@ -25,6 +23,10 @@
         </Component>
 
         <Directory Id="INSTALLDIR.TestAssemblies" Name="TestAssemblies">
+
+          <Component Id="Component.log4net.dll_1756334104" Guid="2b9cb1c5-210d-4dd3-b3d8-44cff72f3db0">
+            <File Id="log4net.dll_1756334104" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\log4net.dll" />
+          </Component>
 
           <Component Id="Component.Newtonsoft.Json.dll_1570579788" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf8bbc5cd1">
             <File Id="Newtonsoft.Json.dll_1570579788" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
@@ -62,9 +64,8 @@
 
         <Directory Id="INSTALLDIR.TestConfigs" Name="TestConfigs">
 
-          <Component Id="Component.INSTALLDIR.TestConfigs.EmptyDirectory" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf813dccf6" KeyPath="yes">
-            <CreateFolder />
-            <RemoveFolder Id="INSTALLDIR.TestConfigs" On="uninstall" />
+          <Component Id="Component.TestListeners.config_1206412680" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfe197988b">
+            <File Id="TestListeners.config_1206412680" Source="..\Quintity.TestFramework.TestLibrary\TestConfigs\TestListeners.config" />
           </Component>
 
         </Directory>
@@ -76,10 +77,43 @@
           </Component>
 
         </Directory>
+
+        <Directory Id="INSTALLDIR.TestListeners" Name="TestListeners">
+          <Directory Id="INSTALLDIR.TestListeners.TestRail" Name="TestRail">
+
+            <Component Id="Component.log4net.dll_351769572" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfe8aa7402">
+              <File Id="log4net.dll_351769572" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\log4net.dll" />
+            </Component>
+
+            <Component Id="Component.Newtonsoft.Json.dll_565703070" Guid="2b9cb1c5-210d-4dd3-b3d8-44cff6baca1d">
+              <File Id="Newtonsoft.Json.dll_565703070" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\Newtonsoft.Json.dll" />
+            </Component>
+
+            <Component Id="Component.Quintity.TestFramework.Core.dll_638321820" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfd6ce9d62">
+              <File Id="Quintity.TestFramework.Core.dll_638321820" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\Quintity.TestFramework.Core.dll" />
+            </Component>
+
+            <Component Id="Component.Quintity.TestFramework.Runtime.dll_1669550689" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf6b1c381e">
+              <File Id="Quintity.TestFramework.Runtime.dll_1669550689" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\Quintity.TestFramework.Runtime.dll" />
+            </Component>
+
+            <Component Id="Component.Starbucks.B2B.TestListener.TestRail.dll_1728189400" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf07f3d4e1">
+              <File Id="Starbucks.B2B.TestListener.TestRail.dll_1728189400" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\Starbucks.B2B.TestListener.TestRail.dll" />
+            </Component>
+
+            <Component Id="Component.Starbucks.B2B.TestListeners.dll_796788977" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf15a68dff">
+              <File Id="Starbucks.B2B.TestListeners.dll_796788977" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\Starbucks.B2B.TestListeners.dll" />
+            </Component>
+
+            <Component Id="Component.TestRail.dll_766137042" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfbadfbb7a">
+              <File Id="TestRail.dll_766137042" Source="..\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\TestRail.dll" />
+            </Component>
+
+          </Directory>
+        </Directory>
       </Directory>
 
       <Component Id="TARGETDIR" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf38406a74" KeyPath="yes">
-        <CreateFolder />
         <RemoveFolder Id="TARGETDIR" On="uninstall" />
       </Component>
 
@@ -91,6 +125,7 @@
 
     <Feature Id="Complete" Title="Complete" Absent="allow" Level="1">
       <ComponentRef Id="Component.Uninstall.SampleAutomation" />
+      <ComponentRef Id="Component.log4net.dll_1756334104" />
       <ComponentRef Id="Component.Newtonsoft.Json.dll_1570579788" />
       <ComponentRef Id="Component.Quintity.TestFramework.Core.dll_215753351" />
       <ComponentRef Id="Component.Quintity.TestFramework.Runtime.dll_647951915" />
@@ -98,8 +133,15 @@
       <ComponentRef Id="Component.Quintity.TestFramework.Utilities.dll_985494753" />
       <ComponentRef Id="Component.WinSCPnet.dll_1751383497" />
       <ComponentRef Id="Component.TestProperties.props_546591017" />
-      <ComponentRef Id="Component.INSTALLDIR.TestConfigs.EmptyDirectory" />
+      <ComponentRef Id="Component.TestListeners.config_1206412680" />
       <ComponentRef Id="Component.SampleTestSuite.ste_1108789338" />
+      <ComponentRef Id="Component.log4net.dll_351769572" />
+      <ComponentRef Id="Component.Newtonsoft.Json.dll_565703070" />
+      <ComponentRef Id="Component.Quintity.TestFramework.Core.dll_638321820" />
+      <ComponentRef Id="Component.Quintity.TestFramework.Runtime.dll_1669550689" />
+      <ComponentRef Id="Component.Starbucks.B2B.TestListener.TestRail.dll_1728189400" />
+      <ComponentRef Id="Component.Starbucks.B2B.TestListeners.dll_796788977" />
+      <ComponentRef Id="Component.TestRail.dll_766137042" />
       <ComponentRef Id="TARGETDIR" />
     </Feature>
 

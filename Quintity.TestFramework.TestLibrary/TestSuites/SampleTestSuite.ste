@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <TestSuite status="Active">
   <SystemID>f5d3affe-4128-48de-bb08-bba022116599</SystemID>
-  <UserID />
+  <UserID>S24</UserID>
   <Title>SampleTestSuite</Title>
   <Author>jmoth</Author>
   <Created>2018-11-18T08:59:36-08:00</Created>
@@ -45,7 +45,7 @@
   <TestScriptObjects>
     <TestScriptObject type="TestCase" status="Active">
       <SystemID>1e289ae1-8ca7-4b35-a20e-a69b946ead73</SystemID>
-      <UserID />
+      <UserID>C74</UserID>
       <Title>Sample Test Case</Title>
       <Author>jmoth</Author>
       <Created>2018-11-18T08:59:36-08:00</Created>

@@ -65,7 +65,15 @@
       <Name>Quintity.TestFramework.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TestListeners\TestRail\log4net.dll" />
+    <Content Include="TestListeners\TestRail\Newtonsoft.Json.dll" />
+    <Content Include="TestListeners\TestRail\Quintity.TestFramework.Core.dll" />
+    <Content Include="TestListeners\TestRail\Quintity.TestFramework.Runtime.dll" />
+    <Content Include="TestListeners\TestRail\Starbucks.B2B.TestListener.TestRail.dll" />
+    <Content Include="TestListeners\TestRail\Starbucks.B2B.TestListeners.dll" />
+    <Content Include="TestListeners\TestRail\TestRail.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\WinSCP.5.13.4\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.4\build\WinSCP.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

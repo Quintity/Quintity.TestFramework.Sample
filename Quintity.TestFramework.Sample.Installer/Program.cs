@@ -26,6 +26,10 @@ namespace Quintity.TestFramework.Sample.Installer
                     new Dir("TestSuites",
                         new DirFiles($@"...\Quintity.TestFramework.TestLibrary\TestSuites\*.ste")),
 
+                    new Dir("TestListeners",
+                        new Dir("TestRail",
+                            new DirFiles($@"...\Quintity.TestFramework.TestLibrary\TestListeners\TestRail\*.dll"))),
+
                     new ExeFileShortcut("Uninstall.SampleAutomation", "[System64Folder]msiexec.exe", "/x [ProductCode] /q")
 
             ));
