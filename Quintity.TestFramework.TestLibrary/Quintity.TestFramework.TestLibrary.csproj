@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestConfigs\TestListeners.config" />
     <None Include="TestProperties\TestProperties.props" />
     <None Include="TestSuites\SampleTestSuite.ste" />
   </ItemGroup>
@@ -64,9 +65,7 @@
       <Name>Quintity.TestFramework.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestConfigs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\WinSCP.5.13.4\build\WinSCP.targets" Condition="Exists('..\packages\WinSCP.5.13.4\build\WinSCP.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
