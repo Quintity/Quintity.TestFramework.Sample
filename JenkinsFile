@@ -1,5 +1,8 @@
 node {
-  
+  stage('Uninstall Previous Build'){
+    bat 'msiexec.exe /x "C:\\Program Files (x86)\\Jenkins\\workspace\\Sample Pipeline\\Quintity.TestFramework.Sample.Installer\\bin\\Debug\\Quintity.Sample.Tests.msi" /QN /L*V "C:\\msilog.log"'  
+    }
+    
   stage('Checkout Solution') {
     git branch: 'master', credentialsId: '5a7e7d90dc8ff3bf92879c9d20683dbc5aafd5ac', url: 'https://github.com/Quintity/Quintity.TestFramework.Sample'
   }
