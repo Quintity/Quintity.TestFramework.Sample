@@ -6,14 +6,14 @@
 </auto-generated>
 -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="7d54cc81-9cc6-4f95-98fc-7d2dd92c7106" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="7d54cc81-9cc6-4f95-98fc-7d2dc92c7105" Manufacturer="jmoth">
+  <Product Id="2b9cb1c5-210d-4dd3-b3d8-44cfd570fa02" Name="Quintity.Sample.Tests" Language="1033" Codepage="Windows-1252" Version="1.0.0.0" UpgradeCode="2b9cb1c5-210d-4dd3-b3d8-44cfc570fa01" Manufacturer="jmoth">
     <Package InstallerVersion="200" Compressed="yes" SummaryCodepage="Windows-1252" Languages="1033" />
     <Media Id="1" Cabinet="Quintity.Sample.Tests.cab" EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="INSTALLDIR" Name="ABSOLUTEPATH">
 
-        <Component Id="Component.Uninstall.SampleAutomation" Guid="7d54cc81-9cc6-4f95-98fc-7d2de78bd38f">
+        <Component Id="Component.Uninstall.SampleAutomation" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfe3cf5c8b">
           <Shortcut Id="INSTALLDIR.Uninstall.SampleAutomation" WorkingDirectory="System64Folder" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode] /q" Name="Uninstall.SampleAutomation.lnk" />
           <RemoveFolder Id="INSTALLDIR" On="uninstall" />
 
@@ -24,34 +24,34 @@
 
         <Directory Id="INSTALLDIR.TestAssemblies" Name="TestAssemblies">
 
-          <Component Id="Component.Newtonsoft.Json.dll_1570579788" Guid="7d54cc81-9cc6-4f95-98fc-7d2d8f78d3d5">
+          <Component Id="Component.Newtonsoft.Json.dll_1570579788" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf8bbc5cd1">
             <File Id="Newtonsoft.Json.dll_1570579788" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Newtonsoft.Json.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Core.dll_215753351" Guid="7d54cc81-9cc6-4f95-98fc-7d2d4650d6ce">
+          <Component Id="Component.Quintity.TestFramework.Core.dll_215753351" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf42945fca">
             <File Id="Quintity.TestFramework.Core.dll_215753351" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Core.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Runtime.dll_647951915" Guid="7d54cc81-9cc6-4f95-98fc-7d2d0488e0ec">
+          <Component Id="Component.Quintity.TestFramework.Runtime.dll_647951915" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf00cc69e8">
             <File Id="Quintity.TestFramework.Runtime.dll_647951915" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Runtime.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_348090868" Guid="7d54cc81-9cc6-4f95-98fc-7d2d50042e82">
+          <Component Id="Component.Quintity.TestFramework.TestLibrary.dll_348090868" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf4c48b77e">
             <File Id="Quintity.TestFramework.TestLibrary.dll_348090868" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.TestLibrary.dll" />
           </Component>
 
-          <Component Id="Component.Quintity.TestFramework.Utilities.dll_985494753" Guid="7d54cc81-9cc6-4f95-98fc-7d2de172176a">
+          <Component Id="Component.Quintity.TestFramework.Utilities.dll_985494753" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfddb6a066">
             <File Id="Quintity.TestFramework.Utilities.dll_985494753" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\Quintity.TestFramework.Utilities.dll" />
           </Component>
 
-          <Component Id="Component.WinSCPnet.dll_1751383497" Guid="7d54cc81-9cc6-4f95-98fc-7d2d099c7d8d">
+          <Component Id="Component.WinSCPnet.dll_1751383497" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf05e00689">
             <File Id="WinSCPnet.dll_1751383497" Source="..\Quintity.TestFramework.TestLibrary\bin\Debug\WinSCPnet.dll" />
           </Component>
 
         </Directory>
       </Directory>
 
-      <Component Id="TARGETDIR" Guid="7d54cc81-9cc6-4f95-98fc-7d2d3cfce178" KeyPath="yes">
+      <Component Id="TARGETDIR" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf38406a74" KeyPath="yes">
         <RemoveFolder Id="TARGETDIR" On="uninstall" />
       </Component>
 
