@@ -19,6 +19,12 @@ node {
     bat 'msiexec.exe /i "C:\\Program Files (x86)\\Jenkins\\workspace\\Sample Pipeline\\Quintity.TestFramework.Sample.Installer\\bin\\Debug\\Quintity.Sample.Tests.msi" /QN /L*V "C:\\msilog.log"'
     
   }
+  
+stage('Execute Tests') {
+    bat '"C:\\Quintity TestEngineer 3.5\\Quintity.TestFramework.TestEngineer.exe"'
+    
+  }
+
     
     
 }
