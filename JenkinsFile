@@ -21,7 +21,7 @@ node {
   }
   
 stage('Execute Tests') {
-    bat '"C:\\Quintity TestEngineer 3.5\\Quintity.TestFramework.TestRunner.exe" "/s=[TestSuites]\\SampleTestSuite.ste" '
+    bat '"C:\\Quintity TestEngineer 3.5\\Quintity.TestFramework.TestRunner.exe" "/s=[TestSuites]\\SampleTestSuite.ste" "/l=[TestConfigs]\\TestListeners.config"'
     
   }
 
