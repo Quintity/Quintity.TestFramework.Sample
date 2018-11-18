@@ -15,6 +15,8 @@
 
         <Component Id="Component.Uninstall.SampleAutomation" Guid="2b9cb1c5-210d-4dd3-b3d8-44cfe3cf5c8b">
           <Shortcut Id="INSTALLDIR.Uninstall.SampleAutomation" WorkingDirectory="System64Folder" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode] /q" Name="Uninstall.SampleAutomation.lnk" />
+
+          <CreateFolder />
           <RemoveFolder Id="INSTALLDIR" On="uninstall" />
 
           <RegistryKey Root="HKCU" Key="Software\WixSharp\Used">
@@ -49,9 +51,35 @@
           </Component>
 
         </Directory>
+
+        <Directory Id="INSTALLDIR.TestProperties" Name="TestProperties">
+
+          <Component Id="Component.TestProperties.props_546591017" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf3d37f008">
+            <File Id="TestProperties.props_546591017" Source="..\Quintity.TestFramework.TestLibrary\TestProperties\TestProperties.props" />
+          </Component>
+
+        </Directory>
+
+        <Directory Id="INSTALLDIR.TestConfigs" Name="TestConfigs">
+
+          <Component Id="Component.INSTALLDIR.TestConfigs.EmptyDirectory" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf813dccf6" KeyPath="yes">
+            <CreateFolder />
+            <RemoveFolder Id="INSTALLDIR.TestConfigs" On="uninstall" />
+          </Component>
+
+        </Directory>
+
+        <Directory Id="INSTALLDIR.TestSuites" Name="TestSuites">
+
+          <Component Id="Component.SampleTestSuite.ste_1108789338" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf824a620c">
+            <File Id="SampleTestSuite.ste_1108789338" Source="..\Quintity.TestFramework.TestLibrary\TestSuites\SampleTestSuite.ste" />
+          </Component>
+
+        </Directory>
       </Directory>
 
       <Component Id="TARGETDIR" Guid="2b9cb1c5-210d-4dd3-b3d8-44cf38406a74" KeyPath="yes">
+        <CreateFolder />
         <RemoveFolder Id="TARGETDIR" On="uninstall" />
       </Component>
 
@@ -69,6 +97,9 @@
       <ComponentRef Id="Component.Quintity.TestFramework.TestLibrary.dll_348090868" />
       <ComponentRef Id="Component.Quintity.TestFramework.Utilities.dll_985494753" />
       <ComponentRef Id="Component.WinSCPnet.dll_1751383497" />
+      <ComponentRef Id="Component.TestProperties.props_546591017" />
+      <ComponentRef Id="Component.INSTALLDIR.TestConfigs.EmptyDirectory" />
+      <ComponentRef Id="Component.SampleTestSuite.ste_1108789338" />
       <ComponentRef Id="TARGETDIR" />
     </Feature>
 

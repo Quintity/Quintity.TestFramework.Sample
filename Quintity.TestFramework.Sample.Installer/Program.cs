@@ -17,7 +17,16 @@ namespace Quintity.TestFramework.Sample.Installer
                     new Dir("TestAssemblies",
                         new DirFiles($@"...\Quintity.TestFramework.TestLibrary\bin\Debug\*.dll")),
 
-                        new ExeFileShortcut("Uninstall.SampleAutomation", "[System64Folder]msiexec.exe", "/x [ProductCode] /q")
+                    new Dir("TestProperties",
+                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\TestProperties\*.props")),
+
+                    new Dir("TestConfigs",
+                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\TestConfigs\*.config")),
+
+                    new Dir("TestSuites",
+                        new DirFiles($@"...\Quintity.TestFramework.TestLibrary\TestSuites\*.ste")),
+
+                    new ExeFileShortcut("Uninstall.SampleAutomation", "[System64Folder]msiexec.exe", "/x [ProductCode] /q")
 
             ));
 
