@@ -11,9 +11,6 @@ namespace Quintity.TestFramework.Sample.Installer
     {
         static void Main(string[] args)
         {
-            //var productCode = "04D28F9E-9D23-47FE-8DDA-92DD61CA6FBD";
-            //var commandLine = 
-
             var project = new Project("Quintity.Sample.Tests",
                 new Dir($@"C:\Quintity TestEngineer 3.5",
                     
@@ -35,7 +32,6 @@ namespace Quintity.TestFramework.Sample.Installer
 
             // Set installer GUID
             project.GUID = new Guid("2B9CB1C5-210D-4DD3-B3D8-44CFC570FA01");
-            //project.GUID = new Guid(productCode);
 
             // Build this bad boy
             project.BuildMsi();
