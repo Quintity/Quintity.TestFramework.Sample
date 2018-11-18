@@ -11,12 +11,13 @@ node {
   stage('Build Solution'){
     bat '\"C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe" \"C:\\Program Files (x86)\\Jenkins\\workspace\\Sample Pipeline\\Quintity.TestFramework.Sample.sln\"'
     }
-  
+/*  
 stage('Uninstall Previous Build'){
     powershell('Start-Process "C:\\Quintity TestEngineer 3.5\\Uninstall.SampleAutomation.lnk" -Verb runas -Wait ')
     /* powershell('Invoke-Item "C:\\Quintity TestEngineer 3.5\\Uninstall.Startbucks.Automation.lnk"') */
     /* bat '"C:\\Quintity TestEngineer 3.5\\Uninstall.Startbucks.Automation.lnk"' */
   }
+*/  
     stage('Deploy New Build') {
     bat 'msiexec.exe /i "C:\\Program Files (x86)\\Jenkins\\workspace\\Sample Pipeline\\Quintity.TestFramework.Sample.Installer\\bin\\Debug\\Quintity.Sample.Tests.msi" /QN /L*V "C:\\msilog.log"'
     
